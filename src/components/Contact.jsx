@@ -1,4 +1,3 @@
-// src/components/Contact.jsx
 import React, { useState } from 'react';
 import { Card, Form, Input, Button, Divider, message, Alert } from 'antd';
 import { MailOutlined, UserOutlined } from '@ant-design/icons';
@@ -15,81 +14,36 @@ const Contact = () => {
     setSubmissionStatus(null);
     
     try {
-      // Simulate API call - replace with your actual endpoint
-      const response = await submitContactForm(values);
+      // Replace with your actual Formspree endpoint
+      const response = await fetch('https://formspree.io/f/xblabely', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
       
-      if (response.success) {
+      if (response.ok) {
         message.success('Message sent successfully! I\'ll get back to you soon.');
         form.resetFields();
-        setSubmissionStatus({ type: 'success', message: 'Your message has been sent successfully!' });
+        setSubmissionStatus({ 
+          type: 'success', 
+          message: 'Your message has been sent successfully!' 
+        });
       } else {
-        throw new Error(response.message || 'Failed to send message');
+        throw new Error('Failed to send message');
       }
     } catch (error) {
       console.error('Form submission error:', error);
       message.error('Failed to send message. Please try again or email me directly.');
       setSubmissionStatus({ 
         type: 'error', 
-        message: `Failed to send message: ${error.message}. Please email me directly at your-email@example.com.`
+        message: 'Failed to send message. Please email me directly at aribisalaibrahim7@gmail.com.'
       });
     } finally {
       setLoading(false);
     }
   };
-
-  // Function to simulate API call - replace with your actual implementation
-  const submitContactForm = async (formData) => {
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Replace this with your actual form submission logic
-    // Example using fetch:
-    /*
-    const response = await fetch('https://your-api-endpoint.com/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    return await response.json();
-    */
-    
-    // For demo purposes, we'll simulate a successful response
-    return { success: true, message: 'Form submitted successfully' };
-  };
-
-  // Alternative: EmailJS integration example
-  /*
-  const submitWithEmailJS = async (formData) => {
-    // First install EmailJS: npm install emailjs-com
-    import emailjs from 'emailjs-com';
-    
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message,
-      to_name: 'Faisal Odunuga'
-    };
-
-    try {
-      const result = await emailjs.send(
-        'YOUR_SERVICE_ID', 
-        'YOUR_TEMPLATE_ID', 
-        templateParams, 
-        'YOUR_USER_ID'
-      );
-      return { success: true, message: 'Email sent successfully' };
-    } catch (error) {
-      throw new Error('Failed to send email via EmailJS');
-    }
-  };
-  */
 
   return (
     <section className="py-20 bg-gray-50">
@@ -98,7 +52,6 @@ const Contact = () => {
           <Card className="shadow-md border-0">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold mb-2">Let's get started.</h2>
-              <p className="text-gray-600 text-lg">MAKE CONTACT FORM</p>
             </div>
             
             {/* Status Alerts */}
@@ -110,6 +63,7 @@ const Contact = () => {
                 showIcon
                 closable
                 className="mb-6"
+                onClose={() => setSubmissionStatus(null)}
               />
             )}
             
@@ -220,9 +174,16 @@ const Contact = () => {
             <div className="text-center text-gray-500 text-sm">
               <p>© Aribisala Ibrahim {new Date().getFullYear()}</p>
               <div className="flex justify-center space-x-6 mt-2">
-                <a href="https://wa.link/4szggw" className="hover:text-blue-600">Contact</a>
-                <a href="https://www.linkedin.com/in/aribisala-ibrahim-85a066378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="hover:text-blue-600">LinkedIn</a>
-                <a href="https://github.com/IBMTECKO12" className="hover:text-blue-600">GitHub</a>
+                <a href="https://wa.link/4szggw" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                  Contact
+                </a>
+                <a href="https://www.linkedin.com/in/aribisala-ibrahim-85a066378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+                   target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                  LinkedIn
+                </a>
+                <a href="https://github.com/IBMTECKO12" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                  GitHub
+                </a>
               </div>
             </div>
           </Card>

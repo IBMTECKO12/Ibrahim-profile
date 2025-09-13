@@ -1,9 +1,8 @@
-// src/components/Projects.jsx
 import React from 'react';
 import { Card, Tag, Divider } from 'antd';
 import { GithubOutlined, GlobalOutlined } from '@ant-design/icons';
 
-// Import project images (you'll need to add these images to your project)
+// Import project images
 import Owambe from '/images/owambe.jpg';
 import Studybuddy from '/images/StudybuddyAI.jpg';
 import StudentDashboard from '/images/studentdashboard.jpg';
