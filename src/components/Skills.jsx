@@ -15,7 +15,7 @@ const Skills = () => {
     {
       title: "Tools",
       skills: ["Git", "GitHub", "NPM", "Figma", "Slack", "Trello", 
-               "Vercel", "Netlify", "Firebase", "Firebase"]
+               "Vercel", "Netlify", "Firebase"]
     }
   ];
 
