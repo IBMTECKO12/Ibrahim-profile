@@ -1,12 +1,32 @@
-# React + Vite
+Aribisala Ibrahim - Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, Vite, Tailwind CSS, and Ant Design. This portfolio showcases Aribisala Ibrahim's skills, projects, and experience as a frontend developer specializing in React and Next.js.
+🚀 Features
 
-Currently, two official plugins are available:
+    Modern Design: Clean, professional layout with thoughtful animations
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Responsive Layout: Fully responsive design that works on all devices
 
-## Expanding the ESLint configuration
+    Interactive Elements: Smooth scrolling navigation and interactive components
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    Project Showcase: Dedicated section to highlight recent work with images and descriptions
+
+    Skills Overview: Categorized display of technical skills and tools
+
+    Contact Form: Easy way for potential clients or employers to get in touch
+
+    Animated Hero Section: Eye-catching landing section with particle effects
+
+🛠️ Built With
+
+    React - Frontend library
+
+    Vite - Build tool and development server
+
+    Tailwind CSS - Utility-first CSS framework
+
+    Ant Design - UI component library
+
+    React Particles - For animated background effects
+
+    React Icons - Icon library
