@@ -122,7 +122,7 @@ const Hero = () => {
           <Button 
             type="primary" 
             size="large" 
-            href="/files/Ibrahim resume.docx"
+            href="https://docs.google.com/document/d/1kZJvEs0eFInA8dp9yB6jDPBN2GbUAAqgCug1K0urfUE/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             icon={<DownloadOutlined />}
